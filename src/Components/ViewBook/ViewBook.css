@@ -1,0 +1,51 @@
+.bookView{
+    height: 75vh;
+    background-color: rgb(24, 39, 105);
+    margin: 5px;
+    margin-top: 90px;
+    display: inherit;
+    border-radius: 15px;
+    overflow: hidden;
+    color: white;
+    
+}
+.backIcon{
+    color: white;
+    font-size: 2rem;
+    margin-left: 10px;
+}
+
+.date{
+    text-align: center;
+}
+.viewMoreImage img{
+    width: 100%;
+    height: 200px;
+}
+.descriptionContent{
+    width: 100%;
+    background-color: rgb(72, 77, 77);
+    height: 200px;
+}
+.descriptionContent h3{
+text-align: center;
+}
+.descriptionContent p{
+    background-color: rgb(129, 149, 167);
+   max-height: 150px;
+    margin: 5px;
+}
+.BtnViewContent{
+    text-align: center;
+}
+.BtnViewContent button{
+    width: 100px;
+    height: 35px;
+    border-radius: 15px;
+    color: white;
+    background-color: rgba(160, 67, 124, 0.877);
+
+}
+.BtnViewContent button:hover{
+    background-color: black;
+}

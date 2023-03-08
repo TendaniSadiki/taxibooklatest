@@ -1,0 +1,29 @@
+.PaymentContainer {
+  margin: 20px;
+  margin-top: 50px;
+  
+  height: 85vh;
+  text-align: center;
+  
+}
+
+.PaymentBtns {
+  
+  display: inline-grid;
+  margin-top: 180px;
+  height: 10%;
+  text-align: center;
+}
+.payingBtn{
+  background: rgb(255, 255, 255, 0.7);
+  width: 12rem;
+  height: 3rem;
+  border-radius: 15px;
+  transition: 1s;
+  border: none;
+  
+}
+.payingBtn:hover{
+  color: rgb(255, 255, 255, 0.7);
+  background-color: rgb(24, 26, 25);
+}

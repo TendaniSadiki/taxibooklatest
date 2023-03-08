@@ -1,0 +1,44 @@
+.Card{
+    background-color: aliceblue;
+    height: 70vh;
+    overflow: hidden;
+    
+}
+.cardDate {
+    margin-top: 10px;
+    text-align: center;
+    
+}
+
+.cardDate input {
+    width: 30px;
+    text-align: center;
+    border: none;
+
+}
+
+.cardContent {
+    border-radius: 15px;
+    margin: 10px 10px  10px;
+    background-color: rgb(192, 192, 85);    
+    margin-top: 150px;
+    height: 30vh;
+    
+
+}
+
+.cardNumbers {
+    margin-top: 20px;
+    margin-left: 20px;
+    height: 40px;
+    text-align: center;
+    border: none;
+}
+
+.cvvNumbers {
+    width: 50px;
+    float: right;
+    margin-right:25px ;
+    border: none;
+    text-align: center;
+}
