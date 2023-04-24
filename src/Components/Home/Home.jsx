@@ -1,35 +1,37 @@
 import React, { useState, useEffect } from "react";
 import {  collection, getDocs } from 'firebase/firestore';
 import { db } from "../../firebase-config";
-import { NavLink } from "react-router-dom";
-// import SideBar from "../SideBar/SideBar";
 import "./home.css";
 
 export default function Home() {
     const [tickets, setTickets] = useState([]);
+    const [selectedTicketId, setSelectedTicketId] = useState(null);
     const ticketsCollectionRef = collection(db,"tickets");
+
     useEffect(() => {
         const getTickets = async () =>{
           const data = await getDocs(ticketsCollectionRef);
           setTickets(data.docs.map((doc) =>({...doc.data(), id: doc.id })))
         }
         getTickets()
-      }, []);
+    }, []);
+
+    const handleBookClick = (ticketId) => {
+        setSelectedTicketId(ticketId);
+    }
+
+    const selectedTicket = selectedTicketId ? tickets.find(ticket => ticket.id === selectedTicketId) : null;
+
     return (
         <div className="Content">
             {tickets.map((book, inx) => {
-                const viewmore = () => {
-                    console.log(inx + book);
-                    sessionStorage.setItem("viewMore", JSON.stringify(book));
-                }
                 return (
                     <div className="bookContent" key={inx}>
                         <div className="LeftContent">
                             <div>
-                                
                             </div>
                             <div className="BtnContent">
-                                <NavLink to="../ViewBookOffline" exact='true' onClick={viewmore} > <button className="BookBtn">Book</button></NavLink>
+                                <button className="BookBtn" onClick={() => handleBookClick(book.id)}>Book</button>
                             </div>
                         </div>
                         <div className="RightContent">
@@ -38,11 +40,21 @@ export default function Home() {
                             <p>To: {book.BookTo}</p>
                             <p>Price: R{book.BookingPrice}</p>
                         </div>
-                    </div>)
+                    </div>
+                )
             })}
             <div className="circle1"></div>
             <div className="circle2"></div>
-            
-              
+            {selectedTicket && (
+                <div className="modal">
+                    <div className="modalContent">
+                        <h2>{selectedTicket.BookFrom} to {selectedTicket.BookTo}</h2>
+                        <p>Date: {selectedTicket.BookingDate}</p>
+                        <p>Price: R{selectedTicket.BookingPrice}</p>
+                        <button className="closeBtn" onClick={() => setSelectedTicketId(null)}>Close</button>
+                    </div>
+                </div>
+            )}
         </div>
-    );}
+    );
+}
