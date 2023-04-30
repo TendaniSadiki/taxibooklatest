@@ -75,6 +75,13 @@
     border-radius: 8px;
 
   }
+  .modal{
+    background-color: #F6F5F3 ;
+    margin-top: -1000px;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+  }
 
   .BookBtn:hover {
     background-color: #65aaf9;
