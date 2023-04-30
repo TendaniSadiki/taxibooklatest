@@ -188,9 +188,9 @@ margin-top: -200px;
   }
   .modal{
     background-color: #F6F5F3 ;
-    margin-top: -1000px;
+    margin-top: -1550px;
     position: fixed;
-    width: 100%;
+    left: 0;
     height: 100vh;
   }
 }
