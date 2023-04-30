@@ -7,7 +7,6 @@ import NavLinks from "./Status";
 
 export default function MobileTopBar() {
 
-    const [profileImg] = useState(JSON.parse(localStorage.getItem("profileInfo")));
   
     //Toggle close and open Nav For mobile
     const [open, setOpen] = useState(false);
@@ -25,7 +24,6 @@ export default function MobileTopBar() {
             {open && <NavLinks isMobile={true} closeMobileMenu={closeMobileMenu} />}
             <div className="titleContent"><h3>Title</h3></div>
             <div className="navProfilePic">
-                <img alt="pp" src={profileImg.profileImg} />
             </div>
         </nav>
     )
