@@ -3,11 +3,14 @@ import { addDoc, collection, getDocs } from "firebase/firestore";
 import { db, auth } from "../../firebase-config";
 import { PaystackButton, PaystackPop } from "react-paystack";
 import "./home.css";
-
+import {  CgSearch } from "react-icons/cg";
+import SearchModal from "../Modal/SearchModal"
+import Carousel from '../Carousel/Carousel'
 export default function Home() {
     const [tickets, setTickets] = useState([]);
     const [selectedTicketId, setSelectedTicketId] = useState(null);
     const [step, setStep] = useState(1);
+    const [searchState, setSearchState] = useState(false);
 
     const [userEmail, setUserEmail] = useState('');
     console.log(userEmail)
@@ -81,6 +84,17 @@ export default function Home() {
 
     return (
         <div className="Content">
+            <Carousel/>
+            <div className="searchIconContent">
+                <button><CgSearch onClick={() => {
+                    setSearchState(true)
+                }} />
+                </button>
+            </div>
+            {searchState && 
+           <SearchModal closeSearchModal={setSearchState} />
+           }
+           
             {tickets.map((book, inx) => {
                 return (
                     <div className="bookContent" key={inx}>

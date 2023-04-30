@@ -2,31 +2,95 @@
   padding: 0;
   margin: 0;
 }
-
+body{
+}
 @media (max-width: 600px) {
   body {
+    background-color: #FFFFFF;
     padding: 0;
     margin: 0;
-    background: linear-gradient(to right top, #65dfc9, #65aaf9);
-
     width: 100%;
     height: 100%;
   }
-
-
-
   .Content {
-    margin-top: 60px;
+    margin: 70px 5px 0px 5px;
+    border-radius: 10px;
+    margin-bottom: 5px;
   }
+  .searchContent{
+    width: 100%;
+    height: 100vh;
+    background-color: azure;
+    position: fixed;
+    top: 61px;
+    text-align: center;
+    right: 0;
+  }
+  .searchContent select{
+    height: 30px;
+    border-radius: 10px;
+  }
+  label{
+    margin: 10px;
+  }
+  .ArrowsContent{
+    float: right;
 
+    border: 1px black ridge;
+    margin-top: -118px;
+    margin-right: 70px;
+  }
+  .ArrowUpContent{
+    float: left;
+  }
+  .ArrowDownContent{
+    float: right;
+  }
+  .searchBar{
+    border: 1px black ridge;
+    border-radius: 15px;
+    height: 170px;
+    margin: 50px 10px 20px 10px;
+    transform: translate(0px, 180px);
+  }
+  .submitSearchBtn{
+    margin-top: 40px;
+    position: fixed;
+  }
+ .searchIconContent{
+  margin-left: 307px;
+ }
+  .searchIconContent button{
+    color: white;
+    background-color: #00AE95;
+    font-size: 1.5rem;
+    width: 50px;
+    margin: -440px 50px 10px 0px;
+    position: fixed;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0, 0.3), 0 7px 21px 0 rgba(0, 0, 0, 0.20);
+
+  }
+  .searchResults{
+background-color: yellow;
+margin-top: -200px;
+  }
+  .closesearchModal{
+    float: right;
+    margin-right: 10px;
+    margin-top: 15px;
+    font-size: 1.8rem;
+  }
   .bookContent {
     height: 280px;
-    background: linear-gradient(to right bottom, rgba(175, 13, 113, 0.877), rgb(255, 255, 255, 0.3));
+    background:#ECFCFF ;
     margin: 5px;
     margin-top: 70px;
     display: inherit;
     border-radius: 15px;
-    color: white;
+    
+    box-shadow: 0 5px 10px 0 rgba(0,0,0, 0.3), 0 7px 21px 0 rgba(0, 0, 0, 0.20);
   }
 
   .LeftContent {
@@ -44,9 +108,10 @@
   }
 
   .homeBookContent {
-    background-color: rgb(24, 39, 105);
+    background-color: #01627F;
     margin-right: 10px;
     border-radius: 15px;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0, 0.3), 0 7px 21px 0 rgba(0, 0, 0, 0.20);
 
   }
 
@@ -54,6 +119,7 @@
     padding: 2px;
     margin-left: 40px;
     margin-top: 6px;
+    
   }
 
   .TaxiLogo {
@@ -68,19 +134,16 @@
   }
 
   .BookBtn {
-    width: 60px;
-    height: 30px;
+    width: 100px;
+    height: 40px;
     margin-top: 130px;
     border: none;
     border-radius: 8px;
+    background-color: #00C6AB;
+    color: white;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0, 0.3), 0 7px 21px 0 rgba(0, 0, 0, 0.20);
 
-  }
-  .modal{
-    background-color: #F6F5F3 ;
-    margin-top: -1000px;
-    position: fixed;
-    width: 100%;
-    height: 100vh;
+
   }
 
   .BookBtn:hover {
@@ -122,5 +185,12 @@
       justify-content: center; */
     width: 100%;
 
+  }
+  .modal{
+    background-color: #F6F5F3 ;
+    margin-top: -1000px;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
   }
 }
