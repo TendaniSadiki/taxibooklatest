@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/taxibooklatest/static/css/main.db70ebf8.css",
-    "main.js": "/taxibooklatest/static/js/main.b50a8e34.js",
+    "main.js": "/taxibooklatest/static/js/main.27809c9b.js",
     "static/media/bar.jpg": "/taxibooklatest/static/media/bar.9e32f9212cf47f5dabe6.jpg",
     "index.html": "/taxibooklatest/index.html",
     "main.db70ebf8.css.map": "/taxibooklatest/static/css/main.db70ebf8.css.map",
-    "main.b50a8e34.js.map": "/taxibooklatest/static/js/main.b50a8e34.js.map"
+    "main.27809c9b.js.map": "/taxibooklatest/static/js/main.27809c9b.js.map"
   },
   "entrypoints": [
     "static/css/main.db70ebf8.css",
-    "static/js/main.b50a8e34.js"
+    "static/js/main.27809c9b.js"
   ]
 }
