@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/taxibooklatest/static/css/main.78099740.css",
-    "main.js": "/taxibooklatest/static/js/main.367cb306.js",
+    "main.css": "/taxibooklatest/static/css/main.507691fc.css",
+    "main.js": "/taxibooklatest/static/js/main.b6ec7dfa.js",
     "static/media/bar.jpg": "/taxibooklatest/static/media/bar.9e32f9212cf47f5dabe6.jpg",
     "static/media/image-gallery-milkbottles.jpg": "/taxibooklatest/static/media/image-gallery-milkbottles.df1d9d8460e873924250.jpg",
     "static/media/image-gallery-sugarcubes.jpg": "/taxibooklatest/static/media/image-gallery-sugarcubes.09b72f4fbfbf08579f9d.jpg",
     "static/media/image-gallery-orange.jpg": "/taxibooklatest/static/media/image-gallery-orange.49f4212bc650862672a7.jpg",
     "static/media/image-gallery-cone.jpg": "/taxibooklatest/static/media/image-gallery-cone.461ff4214c3ac822dfff.jpg",
     "index.html": "/taxibooklatest/index.html",
-    "main.78099740.css.map": "/taxibooklatest/static/css/main.78099740.css.map",
-    "main.367cb306.js.map": "/taxibooklatest/static/js/main.367cb306.js.map"
+    "main.507691fc.css.map": "/taxibooklatest/static/css/main.507691fc.css.map",
+    "main.b6ec7dfa.js.map": "/taxibooklatest/static/js/main.b6ec7dfa.js.map"
   },
   "entrypoints": [
-    "static/css/main.78099740.css",
-    "static/js/main.367cb306.js"
+    "static/css/main.507691fc.css",
+    "static/js/main.b6ec7dfa.js"
   ]
 }
