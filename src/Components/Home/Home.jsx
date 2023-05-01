@@ -75,7 +75,6 @@ export default function Home() {
                     amount: config.amount,
                     date: new Date(),
                 });
-                setStep(4);
             },
         });
         handler.openIframe();

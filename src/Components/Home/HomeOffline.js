@@ -4,6 +4,7 @@ import { db } from "../../firebase-config";
 import { NavLink } from "react-router-dom";
 // import SideBar from "../SideBar/SideBar";
 import "./HomeOffline.css";
+import Carousel from "../Carousel/Carousel";
 
 export default function HomeOffline() {
     const [tickets, setTickets] = useState([]);
@@ -17,6 +18,7 @@ export default function HomeOffline() {
       }, []);
     return (
         <div className="Content">
+                        <Carousel/>
             {tickets.map((book, inx) => {
                 const viewmore = () => {
                     console.log(inx + book);
