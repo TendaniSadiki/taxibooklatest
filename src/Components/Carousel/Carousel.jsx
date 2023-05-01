@@ -25,7 +25,7 @@ function Carousel() {
   };
 
   const carouselStyle = {
-    overflowX: 'auto',
+    overflowX: 'hidden',
     width: '100%',
     display: 'flex',
   };
@@ -74,10 +74,18 @@ function Carousel() {
   
   useEffect(() => {
     carouselRef.current.addEventListener('scroll', handleScroll);
+    const interval = setInterval(() => {
+      if (!isAtEnd) {
+        carouselRef.current.scrollLeft += carouselRef.current.clientWidth;
+      } else {
+        carouselRef.current.scrollLeft = 0;
+      }
+    }, 5000);
     return () => {
       carouselRef.current.removeEventListener('scroll', handleScroll);
+      clearInterval(interval);
     };
-  }, []);
+  }, [isAtEnd]);
   return (
     <div>
       <div style={carouselBtnsStyle}>

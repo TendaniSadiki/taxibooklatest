@@ -15,7 +15,7 @@ body{
   .Content {
     margin: 70px 5px 0px 5px;
     border-radius: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
   }
   .searchContent{
     width: 100%;
@@ -86,7 +86,7 @@ margin-top: -200px;
     height: 280px;
     background:#ECFCFF ;
     margin: 5px;
-    margin-top: 70px;
+    margin-top: 20px;
     display: inherit;
     border-radius: 15px;
     
@@ -188,9 +188,10 @@ margin-top: -200px;
   }
   .modal{
     background-color: #F6F5F3 ;
-    margin-top: -1550px;
+    margin-top: -1320px;
     position: fixed;
     left: 0;
     height: 100vh;
+    width: 100%;
   }
 }
