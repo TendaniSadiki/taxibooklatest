@@ -119,9 +119,6 @@ export default function Home() {
                     </div>
                 );
             })}
-            <div className="circle1"></div>
-            <div className="circle2"></div>
-        
             {selectedTicket && step === 2 && (
                 <div className="modal">
                     <div className="modalContent">
