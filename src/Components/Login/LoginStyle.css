@@ -1,55 +1,51 @@
-body{
-    
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    
+/* Mobile styles */
+@media only screen and (max-width: 600px) {
+  /* Reduce padding */
+  .container {
+    padding: 10px;
   }
-  
-  .container{
-    display:flex;
-      align-items:center;
-      justify-content:center;
-      height:100vh;
-      width:100%;
+
+  /* Center the form */
+  .form-box {
+    margin: 0 auto;
+    width: 90%;
   }
-    .form-box{
-        width:380px;
-        height:450px;
-        background-color:black;
-        padding:20px;
-        display:flex;
-        flex-direction:column;
-        justify-content:flex-start;
-        opacity:0.5;
-        border-radius:2%;
-    }
-  .header-form{
-    margin-bottom:15px;
+
+  /* Adjust font sizes */
+  h1 {
+    font-size: 24px;
   }
-  button{
-    margin-top:40px;
-    margin-bottom:10px;
+
+  .input-group-text {
+    font-size: 20px;
   }
-  .message{
-    display:flex;
-    justify-content:space-between;
-    
+
+  input[type="email"],
+  input[type="password"],
+  button[type="button"] {
+    font-size: 18px;
+    padding: 10px;
   }
-  .social{
-    display:flex;
-    justify-content:space-around;
-    padding:30px;
+
+  /* Reduce the size of the image */
+  .image {
+    height: 80px;
+    width: 80px;
   }
-  
-  .social i{
-    font-size:35px;
+
+  /* Adjust the size of the logo */
+  .header-form {
+    margin-bottom: 20px;
   }
-  
-  .social i:hover{
-    color:red;
-    cursor:pointer;
+
+  /* Center the button */
+  button[type="button"] {
+    margin: 0 auto;
+    display: block;
   }
-  
-  
-  
+
+  /* Adjust the height of the form */
+  .body-form {
+    height: 250px;
+  }
+}

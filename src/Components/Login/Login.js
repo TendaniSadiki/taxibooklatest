@@ -8,6 +8,8 @@ import './LoginStyle.css';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
 const Login = () =>{
+  const [isEmailVerified, setIsEmailVerified] = useState(false);
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -18,51 +20,49 @@ const Login = () =>{
  
 
   const signin = async () => {
-setLoading(true);
+    setLoading(true);
     let getDetails = {
       email: email,
       pass: password,
-      
     };
-   
-  if (getDetails.email ==="" && getDetails.pass ===""){
-    alert("Please enter Email and Password")
-  }
-  else if(getDetails.email ===""){
-    alert("Enter your Email")
-  }
-  else if(!getDetails.email.includes("@")){
-    alert("Email doesn't exist")
-  }
-  else if(getDetails.pass ===""){
-    alert("Enter your Password")
-  }
-  else if(!getDetails.pass.match(numbers)){
-    alert('please add 1 number');
-
-}
-else if(!getDetails.pass.match(upperCaseLetters)){
-    alert('please add 1 uppercase letter');
-
-}
-else if(!getDetails.pass.match(lowerCaseLetters)){
-    alert('please add 1 lovercase letter');
-
-}
-  else{
-   
-    try{
-      const user = await signInWithEmailAndPassword(
-        auth,email,password);
-      setLoading(false)
-     
+  
+    if (getDetails.email ==="" && getDetails.pass ===""){
+      alert("Please enter Email and Password")
     }
-    catch(error){
-      console.log(error.message)
-      setLoading(false)
+    else if(getDetails.email ===""){
+      alert("Enter your Email")
     }
-  }
-  setLoading(false)
+    else if(!getDetails.email.includes("@")){
+      alert("Email doesn't exist")
+    }
+    else if(getDetails.pass ===""){
+      alert("Enter your Password")
+    }
+    else if(!getDetails.pass.match(numbers)){
+      alert('please add 1 number');
+    }
+    else if(!getDetails.pass.match(upperCaseLetters)){
+      alert('please add 1 uppercase letter');
+    }
+    else if(!getDetails.pass.match(lowerCaseLetters)){
+      alert('please add 1 lovercase letter');
+    }
+    else {
+      try {
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+        if (user.emailVerified) {
+          setIsEmailVerified(true);
+          setLoading(false);
+        } else {
+          alert("Please verify your email first.");
+          setLoading(false);
+        }
+      } catch(error){
+        console.log(error.message)
+        setLoading(false)
+      }
+    }
   };
   
     

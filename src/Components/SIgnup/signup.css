@@ -1,53 +1,60 @@
-body{
-    
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-   
-    
-  }
-  
-  .container{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      height:100vh;
-      width:100%;
-      
-  }
-    .form-box{
-      background: #ffffff;
-        width:380px;
-        height:350px;
-        padding:20px;
-        display:flex;
-        flex-direction:column;
-        justify-content:flex-start;
-        opacity:0.5;
-        border-radius:2%;
-        text-align:center;
-    }
-    .form-control{
-      border-radius:15px;
-      margin: 2px;
-    }
+.signup-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-    .form-box h1{
-      color:rgb(0, 0, 0);
-    }
-    
-    .form-box .NavLink{
-      color:rgb(0, 0, 0);
-      text-decoration:none;
-    }
-  .header-form{
-    margin-bottom:2px;
-  }
-  button{
-    margin-top:40px;
-    margin-bottom:10px;
-  }
+h2 {
+  margin-top: 0;
+}
 
-  
-  
-  
+input {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+label {
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #007aff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  margin-bottom: 20px;
+}
+
+.signUpImage {
+  margin-bottom: 20px;
+}
+
+.signUpImage img {
+  width: 100px;
+  height: 100px;
+  margin-top: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (min-width: 768px) {
+  /* Styles for tablets and desktop devices */
+  .signup-container {
+    width: 50%;
+  }
+}

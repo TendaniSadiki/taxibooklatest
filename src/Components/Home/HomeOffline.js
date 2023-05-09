@@ -99,8 +99,7 @@ export default function HomeOffline() {
                     <div className="modalContent">
                         <button className="closeBtn" onClick={() => setStep(2)}>Cancel</button>
                         {/* Sign up form goes here */}
-                        <Signup />
-                        <button className="closeBtn" onClick={() => setStep(2)}>Cancel</button>
+                        <Signup switchModal={step} />
                         <div>
                         </div>
                     </div>
