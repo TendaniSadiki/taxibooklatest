@@ -110,7 +110,7 @@ else if(!getDetails.pass.match(lowerCaseLetters)){
  <button type="button" className="btn btn-secondary btn-block" onClick={signin}>Log In</button>
  <br></br>
  
- <NavLink to="/SIGNUP" className="NavLink" exact ><span><i>Sign Up</i></span>
+ <NavLink to="/Signup" className="NavLink" exact ><span><i>Sign Up</i></span>
 </NavLink>  
    </form>  
           </div>

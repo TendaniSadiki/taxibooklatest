@@ -13,14 +13,7 @@ function OfflineNav(props) {
     return (
         <div>
             
-            <div className="linksContainer">  
-                    <NavLink to="*" activestyle={{color: 'black'}} exact="true" onClick={() => props.isMobile && props.closeMobileMenu()}><span></span>
-                    </NavLink>
-                    <NavLink to="./Home" activestyle={{color: 'black'}} exact="true" onClick={() => {props.isMobile && props.closeMobileMenu(); window.location="/Home"}}><span><i><CgHome/>Home</i></span>
-                    </NavLink>
-                    <NavLink to="./Login" activestyle={{color: 'black'}} exact="true" onClick={() => {props.isMobile && props.closeMobileMenu(); window.location="/Login"}}><span><i><CgLogIn/>Login</i></span>
-                    </NavLink>
-                    </div>
+           
         </div>
     )
 }

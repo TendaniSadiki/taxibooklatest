@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { addDoc, collection, getDocs } from "firebase/firestore";
 import { db, auth } from "../../firebase-config";
-import { PaystackButton, PaystackPop } from "react-paystack";
+import { PaystackButton} from "react-paystack";
 import "./home.css";
 import {  CgSearch } from "react-icons/cg";
 import SearchModal from "../Modal/SearchModal"
 import Carousel from '../Carousel/Carousel'
+import Loader from "../Loader/Loader";
+
 export default function Home() {
+    const [loading, setLoading] = useState(true);
     const [tickets, setTickets] = useState([]);
     const [selectedTicketId, setSelectedTicketId] = useState(null);
     const [step, setStep] = useState(1);
@@ -18,7 +21,7 @@ export default function Home() {
     useEffect(() => {
         // Listen for authentication state changes
         const unsubscribe = auth.onAuthStateChanged((user) => {
-            if (user) {
+            if (user && user.emailVerified) {
                 // If user is signed in, get their email
                 setUserEmail(user.email);
             } else {
@@ -33,6 +36,8 @@ export default function Home() {
         const getTickets = async () => {
             const data = await getDocs(ticketsCollectionRef);
             setTickets(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+            setLoading(false);
+
         };
         getTickets();
     }, []);
@@ -68,6 +73,7 @@ export default function Home() {
                 setSelectedTicketId(null);
             },
             callback: () => {
+                setStep(4)
                 // Write user's email and payment details to a new collection inside "tickets"
                 const userPaymentRef = collection(db, "tickets", selectedTicketId, "payments");
                 addDoc(userPaymentRef, {
@@ -93,8 +99,10 @@ export default function Home() {
             {searchState && 
            <SearchModal closeSearchModal={setSearchState} />
            }
-           
-            {tickets.map((book, inx) => {
+              {loading ? (
+        <Loader />
+      ) : (
+            tickets.map((book, inx) => {
                 return (
                     <div className="bookContent" key={inx}>
                         <div className="LeftContent">
@@ -117,7 +125,7 @@ export default function Home() {
                         </div>
                     </div>
                 );
-            })}
+            }))}
             {selectedTicket && step === 2 && (
                 <div className="modal">
                     <div className="modalContent">
@@ -140,7 +148,7 @@ export default function Home() {
                                 className="paystackBtn"
                                 {...config}
                                 text="Continue to Payment"
-                                onSuccess={() => setStep(4)}
+                                onSuccess={() => {}}
                                 onClose={() => {
                                     setStep(1);
                                     setSelectedTicketId(null);

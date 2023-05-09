@@ -8,7 +8,7 @@ const Status = () =>{
     const [loginState, setLoginState] = useState(null);
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
-      if (user) {
+      if (user && user.emailVerified) {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/firebase.User
         setLoginState(true)
