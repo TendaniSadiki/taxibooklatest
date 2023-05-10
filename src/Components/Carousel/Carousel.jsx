@@ -1,19 +1,28 @@
 import React, { useRef, useState, useEffect } from 'react';
-import ImageOne from './Images/image-gallery-cone.jpg';
-import ImageTwo from './Images/image-gallery-milkbottles.jpg';
-import ImageThree from './Images/image-gallery-orange.jpg';
-import ImageFour from './Images/image-gallery-sugarcubes.jpg';
 import { CgArrowLeftO, CgArrowRightO } from 'react-icons/cg';
-import "./Carousel.css"
+import "./Carousel.css";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../firebase-config";
+
 function Carousel() {
   const carouselRef = useRef(null);
+  const [carousel, setCarousel] = useState([]);
   const [isAtBeginning, setIsAtBeginning] = useState(true);
   const [isAtEnd, setIsAtEnd] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const carouselCollectionRef = collection(db, "carousel");
 
   const handleResize = () => {
     setWindowWidth(window.innerWidth);
   };
+
+  useEffect(() => {
+    const getCarousel = async () => {
+      const data = await getDocs(carouselCollectionRef);
+      setCarousel(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+    getCarousel();
+  }, []);
 
   useEffect(() => {
     window.addEventListener('resize', handleResize);
@@ -22,7 +31,6 @@ function Carousel() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-
 
   const handleScroll = () => {
     const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
@@ -76,8 +84,8 @@ function Carousel() {
   };
 
   const carouselImgStyle = {
-    width:'100%',
-    maxHeight:'100%',
+    width: '100%',
+    maxHeight: '100%',
     objectFit: 'contain',
   };
   const carouselImgWrapperStyle = {
@@ -86,7 +94,7 @@ function Carousel() {
     flex: '0 0 100%',
     overflow: 'hidden'
   };
-  
+
   useEffect(() => {
     carouselRef.current.addEventListener('scroll', handleScroll);
     const interval = setInterval(() => {
@@ -113,22 +121,15 @@ function Carousel() {
           <CgArrowRightO style={carouselLeftStyle} />
         </div>
       </div>
+      
       <div style={carouselStyle} ref={carouselRef}>
-  <div style={carouselImgWrapperStyle}>
-    <img style={carouselImgStyle} alt="carouselImgs" src={ImageOne} />
-  </div>
-  <div style={carouselImgWrapperStyle}>
-    <img style={carouselImgStyle} alt="carouselImgs" src={ImageTwo} />
-  </div>
-  <div style={carouselImgWrapperStyle}>
-    <img style={carouselImgStyle} alt="carouselImgs" src={ImageThree} />
-  </div>
-  <div style={carouselImgWrapperStyle}>
-    <img style={carouselImgStyle} alt="carouselImgs" src={ImageFour} />
-  </div>
-
-</div>
+      {carousel.map((item) => (
+        <div style={carouselImgWrapperStyle}>
+          <img style={carouselImgStyle} alt="carouselImgs" src={item.carouselImg} />
+        </div>
+        ))}
+      </div>
     </div>
-  );
+  )
 }
 export default Carousel;
